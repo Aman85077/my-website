@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Homes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #fff;
+  
+  }
+  
+  html,body {
+    height: 100%;
+    width: 100%;
+  }
+  #cursor{
+    height: 10px;
+    width: 10px;
+    background-color: #00ffa26f;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+  }
+  #nav{
+    height: 145px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    padding: 0 150px;
+    gap: 50px;
+    position: fixed;
+    justify-content: flex-start;
+    z-index: 99;
+  }
+  #nav img{
+    height: 75px;
+  }
+  #nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    
+  }
+  
+  #main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+  }
+  
+  #page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  #page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+  }
+  #page1 h1::before{
+    content: "MODERN. ARTISTIC. FASHIONABLE.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 1px red;
+  }
+  #page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  #page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+  }
+  
+  #page2{
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  #scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  #scroller::-webkit-scrollbar{
+    display: none;
+  }
+  #scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  #scroller h4{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    color: transparent;
+    -webkit-text-stroke: 2px #75c11e;
+  }
+  @keyframes scroll {
+    from{
+      transform: translateX(0);
+    }
+    to{
+      transform: translatex(-100%);
+    }
+    
+  }
+  
+  #cards-container{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+  }
+  .card{
+    height: 80%;
+    width: 24%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+  }
+  #card1{
+    background-image: url(https://wallpaperaccess.com/full/2492037.jpg); 
+  }
+  #card2{
+    background-image: url(https://wallpaperaccess.com/full/5726048.jpg)
+  }
+  #card3{
+    background-image: url(https://wallpaperaccess.com/full/2492090.jpg);
+  }
+  .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11e;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+  }
+  .overlay h4{
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  .overlay p{
+    color: #000;
+    font-size: 18px;
+  }
+  .card:hover .overlay{
+    opacity: 1;
+  }
+  .card:hover{
+    transform: rotate3d(-1, 1, 0, 20deg);
+  }
+  
+  #green-div{
+    height: 21vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, red, blue);
+  }
+  #green-div h4{
+    width: 50%;
+    line-height: 50px;
+    color: #000;
+    text-align: center;
+    font-weight: 800;
+    font-size: 27px;
+    text-transform: uppercase;
+  }
+  #green-div img{
+    height: 100%;
+  }</style>
+<body>
+    <div id="nav">
+    <img src="https://i.pinimg.com/1200x/19/83/33/198333b1da6fbb83a7d6a9a2d64bbc01.jpg" alt="">
+    <a>About</a>
+    <a>Design</a>
+    <a>Contact</a>
+    <a>Sign In</a>
+    </div>
+    <div id="cursor"></div>
+    <video autoplay loop muted <source src="https://cdn.pixabay.com/vimeo/784164182/house-143861.mp4?width=1280&hash=54c6f2b02ae2a5a4e3c4a99ab4128791fcb1bd5f"></video>
+    <div id="main">
+      <div id="page1">
+        <h1>MODERN. ARTISTIC. FASHIONABLE.</h1>
+        <h2>WELCOME TO DREAM HOMES FAMILY FOR BETTER LIFESTYLE! </h2>
+        <P>We Don't Renovate Space, We Transform Them. Your Home Should Tell The Story Of Who You Are, And Be A Collection of What You Love.</P>
+      </div>
+      <div id="page2">
+        <div id="scroller">
+          <div id="scroller-in">
+            <h4>EVERY GREAT DESIGN BEGINS WITH AN EVEN BETTER STORY.</h4>
+            <h4>DESIGN CREATES CULTURE SHAPE VALUES. VALUES DETTERMINE THE FUTURE</h4>
+            <h4>GOOD DESIGN IS OBVIOUS.GREAT DESIGN IS TRANSPARENT</h4>
+            <h4>KEEP YOUR TRUST ALWAYS ON DREAM HOMES COMPANY BECAUSE WE PROVIDE BEST SERVICES.</h4>
+
+          </div>
+          <div id="scroller-in">
+            <h4>EVERY GREAT DESIGN BEGINS WITH AN EVEN BETTER STORY.</h4>
+            <h4>DESIGN CREATES CULTURE SHAPE VALUES. VALUES DETTERMINE THE FUTURE</h4>
+            <h4>GOOD DESIGN IS OBVIOUS.GREAT DESIGN IS TRANSPARENT</h4>
+            <h4>KEEP YOUR TRUST ALWAYS ON DREAM HOMES COMPANY BECAUSE WE PROVIDE BEST SERVICES.</h4> 
+          </div>
+        </div>
+    <div id="cards-container">
+      <div class="card" id="card1">
+        <div class="overlay">
+          <h4>Beachside </h4>
+          <p>Boasting air-conditioned accommodation with a private pool, Beach Side Heaven Apartment in Infinity Beach Resort </p>
+        </div>
+      </div>
+      <div class="card" id="card2">
+        <div class="overlay">
+          <h4>Blue Starlite</h4>
+          <p>area is known for its stunning sea views, trendy restaurants, and luxury shopping. </p>
+        </div>
+      </div>
+      <div class="card" id="card3">
+        <div class="overlay">
+          <h4> Dreamsville </h4>
+          <p>Near market place, Power Backup, Private Dining Area, Air Conditioning, Parking is available, Mineral Water</p>
+        </div>
+      </div>
+    </div>
+    <div id="green-div">
+     <img src="https://media.istockphoto.com/id/910331794/vector/seamless-black-polka-dot-on-white-background.jpg?s=612x612&w=0&k=20&c=KFW8l8ly2Kq3RVbBcD5Gjc7G2PpxOWGZuOWYdCI8g48=" alt=""/>
+      <h4>SIGN UP FOR GETTING A LOVELY DREAM HOMES, DETAILS AND SPECIAL OFFERS. </h4>
+      <img src="https://media.istockphoto.com/id/910331794/vector/seamless-black-polka-dot-on-white-background.jpg?s=612x612&w=0&k=20&c=KFW8l8ly2Kq3RVbBcD5Gjc7G2PpxOWGZuOWYdCI8g48=" alt=""/>
+    </div>
+  </div>
+</div>
+</body>
+</html>
